@@ -16,11 +16,18 @@ class HomeViewController: UIViewController {
     }
     
     
-    func addition(first: Int, second: Int)->Int {
-        let result = first + second
-        return result
-    }
     
+    // Instances
+    
+    // Global Funtion
+    
+    // Outlets
+    
+    // Actions
+    
+    
+    
+
     
     
     

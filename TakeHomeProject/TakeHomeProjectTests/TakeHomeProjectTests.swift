@@ -10,7 +10,7 @@ import XCTest
 @testable import TakeHomeProject
 
 class TakeHomeProjectTests: XCTestCase {
-    
+      // Instances
       let vc = HomeViewController()
    
     
@@ -33,10 +33,6 @@ class TakeHomeProjectTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
-    func testSum() {
-       
-        XCTAssert(vc.addition(first: 10, second: 10) == 20, "Funtion is wrong")
-    }
+  
 
 }
