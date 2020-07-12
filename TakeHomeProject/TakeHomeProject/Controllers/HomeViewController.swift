@@ -13,11 +13,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationTitle()
+        networking.fetchData()
     }
     
     
     // Instances
-    var  appStringModel = AppStringModel()
+    var appStringModel = AppStringModel()
+    var networking = Networking()
     
     // Global Funtion
     func navigationTitle() {
