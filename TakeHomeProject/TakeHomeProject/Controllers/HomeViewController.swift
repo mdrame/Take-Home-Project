@@ -12,20 +12,24 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        navigationTitle()
     }
     
     
-    
     // Instances
+    var  appStringModel = AppStringModel()
     
     // Global Funtion
+    func navigationTitle() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = appStringModel.homeTitle
+    }
     
     // Outlets
+   
     
     // Actions
-    
-    
+  
     
 
     
