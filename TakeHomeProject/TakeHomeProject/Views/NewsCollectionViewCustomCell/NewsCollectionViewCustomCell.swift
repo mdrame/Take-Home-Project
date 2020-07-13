@@ -14,7 +14,9 @@ class NewsCollectionViewCustomCell: UICollectionViewCell {
     lazy var categoryTitle: UILabel = {
         let categoryTitle = UILabel(frame: .zero)
         categoryTitle.translatesAutoresizingMaskIntoConstraints = false
-        categoryTitle.text = "Technology"
+        categoryTitle.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        categoryTitle.font = UIFont(name: "Arial", size: 25)
+        categoryTitle.textAlignment = .center
         return categoryTitle
     }()
     
@@ -33,7 +35,14 @@ class NewsCollectionViewCustomCell: UICollectionViewCell {
     func setupViews() {
         contentView.addSubview(categoryTitle)
         categoryTitleConstrain()
+        contentLayout()
+        
     }
+    
+    
+//    func setCategoryData(listof string: CollectionViewCategory) {
+//        categoryTitle.text = string.category
+//    }
     
     
     override init(frame: CGRect) {
@@ -43,6 +52,11 @@ class NewsCollectionViewCustomCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func contentLayout() {
+        backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        layer.cornerRadius = 15
     }
     
     

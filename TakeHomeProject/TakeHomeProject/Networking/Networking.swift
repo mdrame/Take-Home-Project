@@ -13,7 +13,9 @@ class Networking {
     
     let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=56432932cc67427e85d11ce25dda79cb"
     
-    func fetchData(search title: String, completion: @escaping ([News])->Void) {
+//    http://newsapi.org/v2/everything?q=Apple&from=2020-07-13&sortBy=popularity&apiKey=56432932cc67427e85d11ce25dda79cb
+    
+    func fetchData(search title: String, completion: @escaping (News)->Void) {
         let mainURL = URL(string: url)
         let session = URLSession(configuration: .default)
         let taskGiven = session.dataTask(with: mainURL!) { (data, response, error) in
@@ -37,13 +39,14 @@ class Networking {
     }
     
     
-    func jsonData(data: Data?)->[News]? {
+    func jsonData(data: Data?)->News? {
         let jsonDecoder = JSONDecoder()
         do {
             let encodedData = try? jsonDecoder.decode(News.self, from: data!)
-            let news = News(status: encodedData?.status ?? "Nil", articles: [NewsBody(title: encodedData?.articles?[0].title ?? "No Title", url: encodedData?.articles?[0].url ?? "No URL", urlToImage: encodedData?.articles?[0].urlToImage ?? "No URL Image")] ?? nil)
-//            print(news)
-            return [news]
+//            let statusCode = encodedData?.status ?? "Not Ok"
+//            let articles = [NewsBody(title: encodedData?.articles?[0].title ?? "No Title", url: encodedData?.articles?[0].url ?? "No URL", urlToImage: encodedData?.articles?[0].urlToImage ?? "No URL Image")]
+//            let news = News(status: statusCode, articles: articles)
+            return encodedData
         } catch {
             print(error.localizedDescription)
         }

@@ -12,3 +12,7 @@ import Foundation
 struct AppStringModel {
     var homeTitle = "News Stand"
 }
+
+struct CollectionViewCategory {
+    let category = ["Business", "Entertainment", "Health", "Science", "Tech", "Sports"]
+}

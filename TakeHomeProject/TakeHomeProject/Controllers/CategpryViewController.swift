@@ -10,7 +10,7 @@ import UIKit
 
 class CategpryViewController: UIViewController {
     // Global Var
-    var listOfNews: [News]? = []
+    var listOfNews: [NewsBody]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ extension CategpryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(identifier: "DetailVC") as! DetailViewController 
+        let vc = storyBoard.instantiateViewController(identifier: "DetailVC") as! DetailViewController
         navigationController?.pushViewController(vc, animated: true)
     }
     

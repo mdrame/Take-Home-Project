@@ -12,13 +12,13 @@ class HomeViewController: UIViewController {
     
     
     // Global Var
-    var listOfNews: [News] = []
+    var listOfNews: [NewsBody] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationTitle()
         networking.fetchData(search: "tech") { (listOfNewsObject) in
-            self.listOfNews = listOfNewsObject
+            self.listOfNews = listOfNewsObject.articles!
             print("News in homevc \(self.listOfNews)")
         }
         collectionViewSetUp()
@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
     // Instances
     var appStringModel = AppStringModel()
     var networking = Networking()
+    var collectionviewCategory = CollectionViewCategory()
     
     // Global Funtion
     func navigationTitle() {
@@ -45,8 +46,10 @@ class HomeViewController: UIViewController {
         layout.scrollDirection = .vertical
         let newsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         newsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        
         newsCollectionView.register(NewsCollectionViewCustomCell.self, forCellWithReuseIdentifier: NewsCollectionViewCustomCell.cellIdentifier)
+        newsCollectionView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        newsCollectionView.showsVerticalScrollIndicator = false
+        newsCollectionView.layer.cornerRadius = 15
         return newsCollectionView
     }()
     
@@ -74,26 +77,23 @@ class HomeViewController: UIViewController {
 
 
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return collectionviewCategory.category.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsCollectionViewCustomCell.cellIdentifier, for: indexPath) as! NewsCollectionViewCustomCell
-        cell.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        cell.categoryTitle.text =  collectionviewCategory.category[indexPath.row]
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.size.width / 2, height: collectionView.frame.size.height / 4)
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-          return CGSize(width: 400, height: 400)
-      }
+        return CGSize(width: collectionView.frame.size.width / 2.1 , height: collectionView.frame.size.height / 3)
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
