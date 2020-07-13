@@ -17,9 +17,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationTitle()
-        networking.fetchData { (listOfNewsObject) in
+        networking.fetchData(search: "tech") { (listOfNewsObject) in
             self.listOfNews = listOfNewsObject
-            print("News 📰 \(self.listOfNews)")
+            print("News in homevc \(self.listOfNews)")
         }
         collectionViewSetUp()
     }
@@ -96,6 +96,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
           return CGSize(width: 400, height: 400)
       }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "categoryVC") as? CategpryViewController else { return }
+        vc.listOfNews = listOfNews
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
     
     

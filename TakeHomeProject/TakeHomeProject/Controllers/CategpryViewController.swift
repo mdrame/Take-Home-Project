@@ -9,9 +9,13 @@
 import UIKit
 
 class CategpryViewController: UIViewController {
-
+    // Global Var
+    var listOfNews: [News]? = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let news = listOfNews else { return }
+        print("News in category vc \(news)")
 
     }
     

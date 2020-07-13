@@ -13,7 +13,7 @@ class Networking {
     
     let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=56432932cc67427e85d11ce25dda79cb"
     
-    func fetchData(completion: @escaping ([News])->Void) {
+    func fetchData(search title: String, completion: @escaping ([News])->Void) {
         let mainURL = URL(string: url)
         let session = URLSession(configuration: .default)
         let taskGiven = session.dataTask(with: mainURL!) { (data, response, error) in
