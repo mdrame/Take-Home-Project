@@ -12,7 +12,7 @@ import UIKit
 
 struct News: Codable {
     var status: String
-//    var articles: [NewsBody]
+    var articles: [NewsBody]
 }
 
 struct NewsBody: Codable {

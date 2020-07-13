@@ -13,7 +13,7 @@ class Networking {
     
     let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=56432932cc67427e85d11ce25dda79cb"
     
-    func fetchData() {
+    func fetchData(completion: @escaping ([News])->Void) {
         let mainURL = URL(string: url)
         let session = URLSession(configuration: .default)
         let taskGiven = session.dataTask(with: mainURL!) { (data, response, error) in
@@ -27,7 +27,9 @@ class Networking {
                 return
             }
             
-            self.jsonData(data: data)
+            let presentableData =  self.jsonData(data: data)
+            guard let data = presentableData else { return }
+            completion(data)
         }
         taskGiven.resume()
         
@@ -35,16 +37,17 @@ class Networking {
     }
     
     
-    func jsonData(data: Data?) {
+    func jsonData(data: Data?)->[News]? {
         let jsonDecoder = JSONDecoder()
         do {
             let encodedData = try? jsonDecoder.decode(News.self, from: data!)
-            let news = News(status: encodedData?.status ?? "Not ok")
-            print(news.status)
+            let news = News(status: encodedData?.status ?? "Not ok", articles: [NewsBody(title: (encodedData?.articles[0].title)!, url: (encodedData?.articles[0].url)!, urlToImage: (encodedData?.articles[0].urlToImage)!)])
+//            print(news)
+            return [news]
         } catch {
             print(error.localizedDescription)
         }
-        
+        return nil
     }
     
     

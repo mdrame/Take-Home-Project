@@ -9,11 +9,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    var listOfNews: [News] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationTitle()
-        networking.fetchData()
+        networking.fetchData { (listOfNewsObject) in
+            self.listOfNews = listOfNewsObject
+            print("News 📰 \(self.listOfNews)")
+        }
     }
     
     
