@@ -19,10 +19,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         navigationTitle()
         collectionViewSetUp()
-       
+      
     }
-    
-    
     
     // Instances
     var appStringModel = AppStringModel()
@@ -34,8 +32,6 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = appStringModel.homeTitle
     }
-    
-    
     
     func collectionViewSetUp() {
         view.addSubview(newsCollectionView)
@@ -93,7 +89,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width / 2.1 , height: collectionView.frame.size.height / 3)
+        return CGSize(width: collectionView.frame.size.width / 2.1 , height: collectionView.frame.size.height / 3 - 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
