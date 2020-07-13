@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class CategpryViewController: UIViewController {
     // Global Var
@@ -105,14 +106,29 @@ extension CategpryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(identifier: "DetailVC") as! DetailViewController
-        navigationController?.pushViewController(vc, animated: true)
+        display(thisUrlinSafaree: newsBodyList[indexPath.row].url)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(150)
     }
+    
+    
+    // Render URL VC
+    
+    func presentURLUsingSafaree(url: String) {
+           var presentURLUsingSafaree = SFSafariViewController(url: URL(string: url)!)
+           present(presentURLUsingSafaree, animated: true)
+       }
+    
+    
+    func display(thisUrlinSafaree  url: String?) {
+           guard let unWrapURL = url else {
+               return
+           }
+           // seting url to webview
+           presentURLUsingSafaree(url: unWrapURL)
+       }
     
     
     

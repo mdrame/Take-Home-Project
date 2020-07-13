@@ -45,84 +45,14 @@
                     <view key="view" contentMode="scaleToFill" id="tXK-s3-VFf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qsT-Lf-SvP">
-                                <rect key="frame" x="30" y="172" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="J0U-68-gsa"/>
                     </view>
                     <navigationItem key="navigationItem" id="I3P-Hj-QHE"/>
-                    <connections>
-                        <segue destination="hOD-oh-38A" kind="show" id="So1-fe-Rtm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWN-EV-ulA" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1739.1304347826087" y="137.94642857142856"/>
-        </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="i1U-AZ-fZZ">
-            <objects>
-                <viewController storyboardIdentifier="DetailVC" id="hOD-oh-38A" customClass="DetailViewController" customModule="TakeHomeProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aTu-PR-aHh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="nJ1-Hx-moE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPV-pW-eup">
-                                        <rect key="frame" x="19" y="8" width="376" height="758"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="376" id="F2T-9s-vhC"/>
-                                            <constraint firstAttribute="height" constant="758" id="wVC-5o-bif"/>
-                                        </constraints>
-                                        <string key="text">Follow the structure shown in the wireframe. You can customize it to your liking but the main components should remain the same.
-The first screen of the app shows available categories to choose what kind of news the user wants to browse. You should use a collection view for this. Note that there is a fixed number of categories, you can find them in the docs.
-Once the user selects a category, you show them a list of the top news. These results will each be a clickable item. You should use a table view with a custom cell.
-When a news item is selected, you'll open the full story from the original source (open the link to the full story in a web view).
-The user can go back to the categories screen to keep exploring.
-You'll need to use the News API https://newsapi.org and get an Api key to make authenticated requests.
-You can use third party libraries
-Code must be on Github  Follow the structure shown in the wireframe. You can customize it to your liking but the main components should Follow the structure shown in the wireframe. You can customize it to your liking but the main components should remain the same.
-The first screen of the app shows available categories to choose what kind of news the user wants to browse. You should use a collection view for this. Note that there is a fixed number of categories, you can find them in the docs.
-Once the user selects a category, you show them a list of the top news. These results will each be a clickable item. You should use a table view with a custom cell.
-When a news item is selected, you'll open the full story from the original source (open the link to the full story in a web view).
-The user can go back to the categories screen to keep exploring.
-You'll need to use the News API https://newsapi.org and get an Api key to make authenticated requests.
-You can use third party libraries
-Code must be on Github  Follow the structure shown in the wireframe. You can customize it to your liking but the main components should </string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="HPV-pW-eup" firstAttribute="top" secondItem="nJ1-Hx-moE" secondAttribute="top" constant="8" id="8Id-ba-FIM"/>
-                                    <constraint firstItem="HPV-pW-eup" firstAttribute="leading" secondItem="nJ1-Hx-moE" secondAttribute="leading" constant="19" id="Qfp-rr-y53"/>
-                                    <constraint firstAttribute="trailing" secondItem="HPV-pW-eup" secondAttribute="trailing" constant="19" id="zj3-wh-1bi"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="dqs-ov-tIa"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="Xzp-yF-5bf"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="nJ1-Hx-moE" secondAttribute="bottom" constant="-34" id="2bW-s9-R41"/>
-                            <constraint firstItem="nJ1-Hx-moE" firstAttribute="top" secondItem="y3N-FW-4B6" secondAttribute="top" id="UjF-HU-eoj"/>
-                            <constraint firstItem="nJ1-Hx-moE" firstAttribute="leading" secondItem="y3N-FW-4B6" secondAttribute="leading" id="fbh-sF-Hod"/>
-                            <constraint firstItem="nJ1-Hx-moE" firstAttribute="centerX" secondItem="aTu-PR-aHh" secondAttribute="centerX" id="hoH-L2-urK"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="y3N-FW-4B6"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="K3x-HX-mOd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Std-ml-DK3" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2487" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GMG-8S-34X">
