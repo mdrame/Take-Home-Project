@@ -11,12 +11,12 @@ import Foundation
 
 class Networking {
     
-    let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=56432932cc67427e85d11ce25dda79cb"
-    
-//    http://newsapi.org/v2/everything?q=Apple&from=2020-07-13&sortBy=popularity&apiKey=56432932cc67427e85d11ce25dda79cb
+    let searcBarURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=56432932cc67427e85d11ce25dda79cb"
+    let categoryurl =  "https://newsapi.org/v2/everything?apiKey=56432932cc67427e85d11ce25dda79cb&q="
+    // search url http://newsapi.org/v2/everything?q=Apple&from=2020-07-13&sortBy=popularity&apiKey=56432932cc67427e85d11ce25dda79cb
     
     func fetchData(search title: String, completion: @escaping (News)->Void) {
-        let mainURL = URL(string: url)
+        let mainURL = URL(string: categoryurl+title)
         let session = URLSession(configuration: .default)
         let taskGiven = session.dataTask(with: mainURL!) { (data, response, error) in
             guard let httpResponse = response as? HTTPURLResponse,
@@ -32,6 +32,7 @@ class Networking {
             let presentableData =  self.jsonData(data: data)
             guard let data = presentableData else { return }
             completion(data)
+            print("Over All Data \(data)")
         }
         taskGiven.resume()
         

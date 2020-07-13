@@ -103,7 +103,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //        print(row!)
         let selectedRowTitle = collectionviewCategory.category[row!]
 //        print(selectedRowTitle)
-        vc.selectedCategoryString = selectedRowTitle
+        vc.selectedCategoryString = selectedRowTitle.lowercased()
         navigationController?.pushViewController(vc, animated: true)
         
     }

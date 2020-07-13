@@ -71,7 +71,7 @@ class CategpryViewController: UIViewController {
         }
     }
     
-    
+
     func filterAndGetData(listof object: [News])->[NewsBody]{
         var allNewsArticles:[NewsBody] = []
         for news in object {
