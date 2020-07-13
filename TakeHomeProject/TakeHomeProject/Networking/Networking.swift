@@ -41,7 +41,7 @@ class Networking {
         let jsonDecoder = JSONDecoder()
         do {
             let encodedData = try? jsonDecoder.decode(News.self, from: data!)
-            let news = News(status: encodedData?.status ?? "Not ok", articles: [NewsBody(title: (encodedData?.articles[0].title)!, url: (encodedData?.articles[0].url)!, urlToImage: (encodedData?.articles[0].urlToImage)!)])
+            let news = News(status: encodedData?.status ?? "Nil", articles: [NewsBody(title: encodedData?.articles?[0].title ?? "No Title", url: encodedData?.articles?[0].url ?? "No URL", urlToImage: encodedData?.articles?[0].urlToImage ?? "No URL Image")] ?? nil)
 //            print(news)
             return [news]
         } catch {

@@ -36,10 +36,8 @@ class HomeViewController: UIViewController {
     }
     
     func collectionViewSetUp() {
-        
         view.addSubview(newsCollectionView)
         newsCollectionViewConstraint()
-        
     }
     
     var newsCollectionView: UICollectionView = {

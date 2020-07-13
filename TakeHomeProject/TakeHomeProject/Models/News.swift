@@ -11,14 +11,14 @@ import UIKit
 
 
 struct News: Codable {
-    var status: String
-    var articles: [NewsBody]
+    var status: String?
+    var articles: [NewsBody]?
 }
 
 struct NewsBody: Codable {
-    var title: String
-    var url: String
-    var urlToImage: String
+    var title: String?
+    var url: String?
+    var urlToImage: String?
 }
 
 
