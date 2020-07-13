@@ -13,16 +13,15 @@ class HomeViewController: UIViewController {
     
     // Global Var
     var listOfNews: [NewsBody] = []
+    var selectedCategoryString: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationTitle()
-        networking.fetchData(search: "tech") { (listOfNewsObject) in
-            self.listOfNews = listOfNewsObject.articles!
-            print("News in homevc \(self.listOfNews)")
-        }
         collectionViewSetUp()
+       
     }
+    
     
     
     // Instances
@@ -35,6 +34,8 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = appStringModel.homeTitle
     }
+    
+    
     
     func collectionViewSetUp() {
         view.addSubview(newsCollectionView)
@@ -99,7 +100,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "categoryVC") as? CategpryViewController else { return }
-        vc.listOfNews = listOfNews
+        let selectedIndex = collectionView.indexPathsForSelectedItems
+//        print(selectedIndex)
+        let path = selectedIndex?[0]
+        let row = path?[1]
+//        print(row!)
+        let selectedRowTitle = collectionviewCategory.category[row!]
+//        print(selectedRowTitle)
+        vc.selectedCategoryString = selectedRowTitle
         navigationController?.pushViewController(vc, animated: true)
         
     }

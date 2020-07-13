@@ -10,23 +10,28 @@ import UIKit
 
 class CategpryViewController: UIViewController {
     // Global Var
-    var listOfNews: [NewsBody]? = []
+    var selectedCategoryString: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetUp()
-        guard let news = listOfNews else { return }
-        print("News in category vc \(news)")
+        getSelectedStringAndFetchData(selectedCategory: selectedCategoryString)
         
     }
     
     // Instances
+    var networking = Networking()
     
     // Global Funtion
     func tableViewSetUp() {
         view.addSubview(newsTableView)
         newsTableView.delegate = self
         newsTableView.dataSource = self
+    }
+    
+    func getSelectedStringAndFetchData(selectedCategory title: String?) {
+        guard let transferedTitle = title else { return }
+        print(transferedTitle)
     }
     
     // Outlets
