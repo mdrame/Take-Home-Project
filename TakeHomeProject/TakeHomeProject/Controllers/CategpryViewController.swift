@@ -50,6 +50,12 @@ extension CategpryViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "DetailVC") as! DetailViewController 
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     
 }

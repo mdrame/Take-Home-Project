@@ -105,7 +105,7 @@
         <!--Detail View Controller-->
         <scene sceneID="i1U-AZ-fZZ">
             <objects>
-                <viewController id="hOD-oh-38A" customClass="DetailViewController" customModule="TakeHomeProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="hOD-oh-38A" customClass="DetailViewController" customModule="TakeHomeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aTu-PR-aHh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,8 +114,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="264"/>
                                 <color key="backgroundColor" red="0.93596178760000004" green="0.54674790159999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="TcZ-xZ-aBF"/>
-                                    <constraint firstAttribute="height" constant="264" id="zzp-HB-gMX"/>
+                                    <constraint firstAttribute="height" constant="264" id="sNt-dT-8ht"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="nJ1-Hx-moE">
@@ -144,6 +143,7 @@ Code must be on Github  Follow the structure shown in the wireframe. You can cus
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="HPV-pW-eup" firstAttribute="centerY" secondItem="nJ1-Hx-moE" secondAttribute="centerY" id="8UU-8f-Sww"/>
                                     <constraint firstItem="HPV-pW-eup" firstAttribute="top" secondItem="nJ1-Hx-moE" secondAttribute="top" constant="20" id="Kb9-5W-WxD"/>
                                     <constraint firstAttribute="trailing" secondItem="HPV-pW-eup" secondAttribute="trailing" constant="19" id="byN-4x-oTY"/>
                                     <constraint firstItem="HPV-pW-eup" firstAttribute="leading" secondItem="nJ1-Hx-moE" secondAttribute="leading" constant="19" id="ngr-cn-Mor"/>
@@ -155,11 +155,11 @@ Code must be on Github  Follow the structure shown in the wireframe. You can cus
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="FVu-57-Ln8" firstAttribute="top" secondItem="y3N-FW-4B6" secondAttribute="top" id="2z0-fo-MbE"/>
+                            <constraint firstItem="nJ1-Hx-moE" firstAttribute="top" secondItem="FVu-57-Ln8" secondAttribute="bottom" constant="8" id="1hq-dw-bzN"/>
                             <constraint firstItem="nJ1-Hx-moE" firstAttribute="leading" secondItem="aTu-PR-aHh" secondAttribute="leading" id="7FM-q0-ngU"/>
-                            <constraint firstAttribute="trailing" secondItem="FVu-57-Ln8" secondAttribute="trailing" id="WOI-NI-349"/>
-                            <constraint firstItem="nJ1-Hx-moE" firstAttribute="top" secondItem="FVu-57-Ln8" secondAttribute="bottom" constant="8" id="f6g-kc-fr6"/>
-                            <constraint firstItem="FVu-57-Ln8" firstAttribute="leading" secondItem="aTu-PR-aHh" secondAttribute="leading" id="hz7-7K-kvL"/>
+                            <constraint firstItem="FVu-57-Ln8" firstAttribute="top" secondItem="y3N-FW-4B6" secondAttribute="top" id="Bpo-RB-PU9"/>
+                            <constraint firstItem="FVu-57-Ln8" firstAttribute="leading" secondItem="nJ1-Hx-moE" secondAttribute="leading" id="PjD-CV-qQv"/>
+                            <constraint firstItem="FVu-57-Ln8" firstAttribute="trailing" secondItem="nJ1-Hx-moE" secondAttribute="trailing" id="jEg-vE-hEm"/>
                             <constraint firstAttribute="bottomMargin" secondItem="nJ1-Hx-moE" secondAttribute="bottom" constant="-34" id="k8Z-S5-COV"/>
                             <constraint firstAttribute="trailing" secondItem="nJ1-Hx-moE" secondAttribute="trailing" id="kfa-7o-T2a"/>
                         </constraints>
