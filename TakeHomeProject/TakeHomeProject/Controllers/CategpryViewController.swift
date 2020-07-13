@@ -99,7 +99,8 @@ extension CategpryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCustomCell.cellIdentifier, for: indexPath) as! NewsTableViewCustomCell
 //        cell.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        cell.setUpViw(with: newsBodyList[indexPath.row])
+        cell.setUpTitle(with: newsBodyList[indexPath.row])
+        cell.decodeImageURLAndSet(data: newsBodyList[indexPath.row])
         return cell
     }
     
