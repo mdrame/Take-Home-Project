@@ -111,9 +111,9 @@
 		775E977F24B7F05000A0919E /* TakeHomeProject */ = {
 			isa = PBXGroup;
 			children = (
-				775E97B224B7F07D00A0919E /* Controllers */,
-				775E97B124B7F07800A0919E /* Views */,
 				775E97B024B7F07300A0919E /* Models */,
+				775E97B124B7F07800A0919E /* Views */,
+				775E97B224B7F07D00A0919E /* Controllers */,
 				775E97BB24B96DD400A0919E /* Networking */,
 				775E978024B7F05000A0919E /* AppDelegate.swift */,
 				775E978224B7F05000A0919E /* SceneDelegate.swift */,
