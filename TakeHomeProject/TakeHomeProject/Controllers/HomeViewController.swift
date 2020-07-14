@@ -65,18 +65,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchKit: UISearchBar!
     
     
-    // Actions
-    
-    
-    
-    
+    // Actions  
 }
 
 
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    // Data Source
+    // Data Source & Delegates
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionviewCategory.category.count
     }
@@ -108,17 +105,5 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
     }
     
-    
-    
-    
-    
-    // Delegates
-    
-    
-    
-    
-    
-    
-    
-    
+   
 }
